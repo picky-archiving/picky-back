@@ -18,19 +18,21 @@ public class PolicyStats extends BaseEntity {
 	private Long policyId;
 
 	@MapsId // PK를 Policy의 id와 공유
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
 
 	@Column(name = "view_count", nullable = false)
-	private Long viewCount;
+	private Long viewCount = 0L;   // 기본값 0
 
-	public static PolicyStats init(Policy policy) {
-		PolicyStats stats = new PolicyStats();
-		stats.policy = policy;
-		stats.viewCount = 0L;
-		return stats;
+	private PolicyStats(Policy policy) {
+		this.policy = policy;
+		this.viewCount = 0L;
 	}
+	public static PolicyStats init(Policy policy) {
+		return new PolicyStats(policy);
+	}
+
 
 	public void increaseViewCount() {
 		this.viewCount++;

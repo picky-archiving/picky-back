@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
     Page<Bookmark> findByUserId(Long userId, Pageable pageable);
+    boolean existsByPolicyIdAndActive(Long policyId, boolean active);
 }

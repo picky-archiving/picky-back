@@ -1,4 +1,4 @@
-package com.example.pickyback.repository.policy;
+package com.example.pickyback.domain.policy.repository;
 
 import com.example.pickyback.domain.policy.entity.Policy;
 import org.springframework.data.jpa.repository.JpaRepository;

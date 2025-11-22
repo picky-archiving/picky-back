@@ -2,12 +2,18 @@ package com.example.pickyback.domain.policy.entity;
 
 import com.example.pickyback.global.entity.BaseEntity;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "policy")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Policy extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

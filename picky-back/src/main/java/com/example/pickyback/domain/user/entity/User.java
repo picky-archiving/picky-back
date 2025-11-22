@@ -22,7 +22,6 @@ public class User extends BaseEntity {
 	@Column(name = "income_bracket", nullable = false)
 	private Long incomeBracket;
 
-
 	public static User create(Long incomeBracket) {
 		User user = new User();
 		user.incomeBracket = incomeBracket;

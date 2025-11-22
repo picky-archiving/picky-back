@@ -1,13 +1,13 @@
-package com.example.pickyback.service.policy;
+package com.example.pickyback.domain.policy.service;
 
 import static com.example.pickyback.global.exception.CommonErrorCode.POLICY_NOT_FOUNT_ERROR;
 
+import com.example.pickyback.domain.bookmark.repository.BookmarkRepository;
 import com.example.pickyback.domain.policy.entity.Policy;
 import com.example.pickyback.domain.policy.entity.PolicyStats;
-import com.example.pickyback.dto.policy.SinglePolicyResponseDto;
-import com.example.pickyback.repository.bookmark.BookmarkRepository;
-import com.example.pickyback.repository.policy.PolicyStatsRepository;
-import com.example.pickyback.repository.policy.SinglePolicyRepository;
+import com.example.pickyback.domain.policy.repository.PolicyStatsRepository;
+import com.example.pickyback.domain.policy.dto.SinglePolicyResponseDto;
+import com.example.pickyback.domain.policy.repository.SinglePolicyRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

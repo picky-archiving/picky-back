@@ -14,8 +14,9 @@ public enum CommonErrorCode implements ErrorCode {
 	INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "서버 상태가 원활하지 않습니다. 잠시 후 다시 시도해주세요."),
 
 	// 클라이언트가 요청 잘못했을 때 (400)
-	BAD_REQUEST(HttpStatus.BAD_REQUEST, "요청이 올바르지 않습니다. 입력 값을 다시 확인해주세요.");
+	BAD_REQUEST(HttpStatus.BAD_REQUEST, "요청이 올바르지 않습니다. 입력 값을 다시 확인해주세요."),
 
+	POLICY_NOT_FOUNT_ERROR(HttpStatus.BAD_REQUEST, "정책이 존재하지 않습니다.");
 
 	private final HttpStatus status;
 	private final String message;

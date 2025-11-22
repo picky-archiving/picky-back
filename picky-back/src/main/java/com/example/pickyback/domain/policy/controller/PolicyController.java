@@ -1,5 +1,6 @@
 package com.example.pickyback.domain.policy.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -29,6 +30,10 @@ import com.example.pickyback.global.dto.PageResponse;
 
 import lombok.RequiredArgsConstructor;
 
+
+@Tag(name = "Policy")
+@Tag(name = "Bookmark")
+@Tag(name = "Home")
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor

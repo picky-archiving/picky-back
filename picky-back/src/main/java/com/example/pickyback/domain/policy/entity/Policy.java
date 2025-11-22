@@ -52,6 +52,4 @@ public class Policy extends BaseEntity {
 
     @Column(name = "end_date")
     private LocalDate endDate;
-
-
 }

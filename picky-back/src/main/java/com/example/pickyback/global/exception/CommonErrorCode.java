@@ -28,7 +28,7 @@ public enum CommonErrorCode implements ErrorCode {
     POLICY_NOT_FOUND(
             HttpStatus.NOT_FOUND,
             "정책이 존재하지 않습니다."
-    );   
+    );
 
     private final HttpStatus status;
     private final String message;

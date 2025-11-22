@@ -77,10 +77,7 @@ public class SwaggerConfig {
 						.url("http://localhost:8080")
 						.description("로컬 개발 서버"),
 				new Server()
-						.url("https://dev-api.picky.com")
-						.description("개발 환경 서버"),
-				new Server()
-						.url("https://api.picky.com")
+						.url("http://54.180.92.121:8080")
 						.description("운영 환경 서버")
 		);
 	}
@@ -88,22 +85,22 @@ public class SwaggerConfig {
 	private List<Tag> tags() {
 		return List.of(
 				new Tag()
-						.name("Home API")
+						.name("Home")
 						.description("홈 화면 관련 API - 사용자 맞춤 정책 추천 및 카테고리별 인기 정책 조회"),
 		new Tag()
-				.name("Policy API")
+				.name("Policy")
 				.description("정책 조회 API - 전체 정책 목록 조회, 카테고리별 필터링, 정렬 기능 제공"),
 		new Tag()
-				.name("Policy Detail API")
+				.name("Policy Detail")
 				.description("정책 상세 조회 API - 개별 정책의 상세 정보 조회 및 조회수 증가 처리"),
 		new Tag()
-				.name("Bookmark API")
+				.name("Bookmark")
 				.description("북마크 관리 API - 관심 정책 저장, 삭제, 목록 조회 기능"),
 		new Tag()
-				.name("User API")
+				.name("User")
 				.description("사용자 관리 API - 사용자 정보 조회 및 수정 기능"),
 		new Tag()
-				.name("System API")
+				.name("System")
 				.description("시스템 API - 서버 상태 확인 및 테스트용 엔드포인트")
 				);
 	}

@@ -38,6 +38,9 @@ public class Policy extends BaseEntity {
     @Column(name = "image_url", length = 500)
     private String imageUrl;
 
+    @Column(nullable = false, length = 100)
+    private String host;
+
     @Column(length = 255)
     private String qualifications;
 

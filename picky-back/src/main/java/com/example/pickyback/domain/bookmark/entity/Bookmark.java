@@ -26,4 +26,12 @@ public class Bookmark {
 
     @Column(nullable = false)
     private boolean active = false;
+
+    public void activate() {
+        this.active = true;
+    }
+
+    public void deactivate() {
+        this.active = false;
+    }
 }

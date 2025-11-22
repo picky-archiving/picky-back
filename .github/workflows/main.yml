@@ -19,9 +19,11 @@ jobs:
           java-version: '17'
 
       - name: Grant execute permission for gradlew
+        working-directory: ./picky-back
         run: chmod +x ./gradlew
 
       - name: Build Spring Boot project
+        working-directory: ./picky-back
         run: ./gradlew build -x test
 
       - name: Copy JAR to EC2
@@ -30,5 +32,6 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-          source: "build/libs/*.jar"
+          # 레포 루트 기준 경로
+          source: "picky-back/build/libs/*.jar"
           target: "~/app/"

@@ -21,10 +21,10 @@ public class PolicyController {
 
     @GetMapping("/bookmarked")
     public ApiResponse<PageResponse<BookmarkedPolicyResDTO>> getbookmarkedPolicies(
-            @RequestHeader("X-USER-ID") Long userId,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size
             ) {
+        Long userId = 1L;
 
         Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "id");
 

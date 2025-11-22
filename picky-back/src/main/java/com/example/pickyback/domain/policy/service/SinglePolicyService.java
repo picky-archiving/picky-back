@@ -1,6 +1,6 @@
 package com.example.pickyback.domain.policy.service;
 
-import static com.example.pickyback.global.exception.CommonErrorCode.POLICY_NOT_FOUNT_ERROR;
+import static com.example.pickyback.global.exception.CommonErrorCode.POLICY_NOT_FOUND;
 
 import com.example.pickyback.domain.bookmark.repository.BookmarkRepository;
 import com.example.pickyback.domain.policy.entity.Policy;
@@ -24,7 +24,7 @@ public class SinglePolicyService {
 
     public SinglePolicyResponseDto increaseViewAndGetPolicy(Long policyId) {
         Policy policy = singlePolicyRepository.findById(policyId)
-                .orElseThrow(() -> new RuntimeException(POLICY_NOT_FOUNT_ERROR.getMessage()));
+                .orElseThrow(() -> new RuntimeException(POLICY_NOT_FOUND.getMessage()));
 
         PolicyStats policyStats = increaseView(policy);
         boolean bookmarked = bookmarkRepository.existsByPolicyIdAndActive(policyId, true);

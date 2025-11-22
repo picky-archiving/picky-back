@@ -1,7 +1,7 @@
 package com.example.pickyback.domain.bookmark.entity;
 
-import com.example.pickyback.domain.Policy;
-import com.example.pickyback.domain.User;
+import com.example.pickyback.domain.policy.entity.Policy;
+import com.example.pickyback.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 

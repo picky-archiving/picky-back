@@ -44,10 +44,10 @@ public class PolicyServiceImpl implements PolicyService {
 
 		// 2) 카테고리 섹션들 (필요한 카테고리만 하드코딩)
 		List<HomeResponseDto.CategorySectionDto> categories = List.of(
-			buildCategorySection("취업"),
-			buildCategorySection("주거"),
-			buildCategorySection("금융"),
-			buildCategorySection("교육")
+			buildCategorySection("finance"),
+			buildCategorySection("employment"),
+			buildCategorySection("education"),
+			buildCategorySection("housing")
 		);
 
 		return HomeResponseDto.builder()

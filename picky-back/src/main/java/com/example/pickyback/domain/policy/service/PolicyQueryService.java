@@ -18,8 +18,8 @@ import java.time.temporal.ChronoUnit;
 @RequiredArgsConstructor
 public class PolicyQueryService {
 
-    private BookmarkRepository bookmarkRepository;
-    private PolicyStatsRepository policyStatsRepository;
+    private final BookmarkRepository bookmarkRepository;
+    private final PolicyStatsRepository policyStatsRepository;
 
     // 유저가 북마크한 정책 목록 조회
     public Page<BookmarkedPolicyResDTO> getBookmarkedPolicies(Long userId, Pageable pageable) {

@@ -22,10 +22,13 @@ public class User extends BaseEntity {
 	@Column(name = "income_bracket", nullable = false)
 	private Long incomeBracket;
 
+	public void updateIncomeBracket(Long incomeBracket) {
+		this.incomeBracket = incomeBracket;
+	}
+
 	public static User create(Long incomeBracket) {
 		User user = new User();
 		user.incomeBracket = incomeBracket;
 		return user;
 	}
-
 }

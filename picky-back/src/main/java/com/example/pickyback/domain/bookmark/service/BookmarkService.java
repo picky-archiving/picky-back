@@ -13,7 +13,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.awt.print.Book;
 
 @Service
 @RequiredArgsConstructor
@@ -43,7 +42,7 @@ public class BookmarkService {
             bookmark = Bookmark.builder()
                     .user(user)
                     .policy(policy)
-                    .active(false)
+                    .active(true)
                     .build();
 
         }else{

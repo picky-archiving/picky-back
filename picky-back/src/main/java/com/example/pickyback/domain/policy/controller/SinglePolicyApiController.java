@@ -1,4 +1,4 @@
-package com.example.pickyback.controller.policy;
+package com.example.pickyback.domain.policy.controller;
 
 import com.example.pickyback.domain.policy.dto.SinglePolicyResponseDto;
 import com.example.pickyback.global.dto.ApiResponse;

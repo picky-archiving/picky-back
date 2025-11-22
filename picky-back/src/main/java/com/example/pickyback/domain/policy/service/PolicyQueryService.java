@@ -23,11 +23,9 @@ public class PolicyQueryService {
 
     // 유저가 북마크한 정책 목록 조회
     public Page<BookmarkedPolicyResDTO> getBookmarkedPolicies(Long userId, Pageable pageable) {
-        Page<Bookmark> bookmarks = bookmarkRepository.findByUserId(userId, pageable);
-
+        Page<Bookmark> bookmarks = bookmarkRepository.findByUserIdAndActiveTrue(userId, pageable);
         return bookmarks.map(this::toBookmarkedPolicyResDTO);
     }
-
     private BookmarkedPolicyResDTO toBookmarkedPolicyResDTO(Bookmark bookmark) {
         Policy policy = bookmark.getPolicy();
 
@@ -47,12 +45,13 @@ public class PolicyQueryService {
                 .category(policy.getCategory())
                 .title(policy.getTitle())
                 .host(policy.getHost())
+                .imageUrl(policy.getImageUrl())
                 .always(policy.isAlways())
                 .StartDate(policy.getStartDate())
                 .EndDate(policy.getEndDate())
                 .dDay(dDay)
                 .viewCount(viewCount)
-                .bookmarked(true)
+                .bookmarked(bookmark.isActive())
                 .build();
     }
 }

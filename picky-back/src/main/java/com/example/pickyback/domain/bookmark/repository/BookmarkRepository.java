@@ -18,4 +18,6 @@ public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
 
     // 북마크 삭제용
     Optional<Bookmark> findByUserIdAndPolicyId(Long userId, Long policyId);
+
+    Page<Bookmark> findByUserIdAndActiveTrue(Long userId, Pageable pageable);
 }

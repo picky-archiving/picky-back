@@ -11,4 +11,8 @@ public class TestController {
         return "Hello World";
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
 }

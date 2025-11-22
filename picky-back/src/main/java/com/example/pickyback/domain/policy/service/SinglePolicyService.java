@@ -8,6 +8,8 @@ import com.example.pickyback.domain.policy.entity.PolicyStats;
 import com.example.pickyback.domain.policy.repository.PolicyStatsRepository;
 import com.example.pickyback.domain.policy.dto.SinglePolicyResponseDto;
 import com.example.pickyback.domain.policy.repository.SinglePolicyRepository;
+import com.example.pickyback.global.exception.BaseException;
+import com.example.pickyback.global.exception.CommonErrorCode;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +26,7 @@ public class SinglePolicyService {
 
     public SinglePolicyResponseDto increaseViewAndGetPolicy(Long policyId) {
         Policy policy = singlePolicyRepository.findById(policyId)
-                .orElseThrow(() -> new RuntimeException(POLICY_NOT_FOUND.getMessage()));
+                .orElseThrow(() -> new BaseException(CommonErrorCode.POLICY_NOT_FOUND));
 
         PolicyStats policyStats = increaseView(policy);
         boolean bookmarked = bookmarkRepository.existsByPolicyIdAndActive(policyId, true);

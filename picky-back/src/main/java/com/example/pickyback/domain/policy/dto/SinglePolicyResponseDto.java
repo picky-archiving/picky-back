@@ -1,4 +1,4 @@
-package com.example.pickyback.dto.policy;
+package com.example.pickyback.domain.policy.dto;
 
 import com.example.pickyback.domain.policy.entity.Policy;
 import com.example.pickyback.domain.policy.entity.PolicyStats;

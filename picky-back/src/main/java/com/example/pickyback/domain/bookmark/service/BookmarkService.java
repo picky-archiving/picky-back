@@ -42,7 +42,7 @@ public class BookmarkService {
             bookmark = Bookmark.builder()
                     .user(user)
                     .policy(policy)
-                    .active(false)
+                    .active(true)
                     .build();
 
         }else{

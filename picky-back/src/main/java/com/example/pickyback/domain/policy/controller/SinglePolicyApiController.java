@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/post")
 @RequiredArgsConstructor
 @Tag(
-        name = "Policy Detail API",
+        name = "Policy Detail",
         description = "정책 상세 조회 API - 개별 정책의 상세 정보 조회 및 조회수 증가 처리"
 )
 public class SinglePolicyApiController {

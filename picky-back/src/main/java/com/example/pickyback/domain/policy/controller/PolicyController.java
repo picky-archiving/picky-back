@@ -31,9 +31,6 @@ import com.example.pickyback.global.dto.PageResponse;
 import lombok.RequiredArgsConstructor;
 
 
-@Tag(name = "Policy")
-@Tag(name = "Bookmark")
-@Tag(name = "Home")
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -48,6 +45,7 @@ public class PolicyController {
      * GET /api/post/bookmarked
      * @return 200 OK
      */
+    @Tag(name = "Policy")
     @GetMapping("/post/bookmarked")
     public ResponseEntity<ApiResponse<PageResponse<BookmarkedPolicyResDTO>>>
     getBookmarkedPolicies(
@@ -70,6 +68,7 @@ public class PolicyController {
      * POST /api/post/{policyId}/bookmark
      * @return 201 Created
      */
+    @Tag(name = "Bookmark")
     @PostMapping("/post/{policyId}/bookmark")
     public ResponseEntity<ApiResponse<BookmarkResDTO>> addBookmark(
             @PathVariable Long policyId) {
@@ -84,6 +83,7 @@ public class PolicyController {
      * DELETE /api/post/{policyId}/bookmark
      * @return 200 OK
      */
+    @Tag(name = "Bookmark")
     @DeleteMapping("/post/{policyId}/bookmark")
     public ResponseEntity<ApiResponse<BookmarkResDTO>> removeBookmark(
             @PathVariable Long policyId) {
@@ -98,6 +98,7 @@ public class PolicyController {
      * GET /api/post
      * @return 200 OK
      */
+    @Tag(name = "Policy")
     @GetMapping("/post")
     public ResponseEntity<ApiResponse<Page<PolicyResponseDto>>> getAllPolicy(
             @RequestParam(defaultValue = "0") int page,
@@ -116,6 +117,8 @@ public class PolicyController {
      * GET /api/home
      * @return 200 OK
      */
+
+    @Tag(name = "Home")
     @GetMapping("/home")
     public ResponseEntity<ApiResponse<HomeResponseDto>> getHome(
             @RequestHeader(value = "X-USER-ID", required = false, defaultValue
@@ -131,6 +134,7 @@ public class PolicyController {
      * GET /api/home/category/{category}
      * @return 200 OK
      */
+    @Tag(name = "Policy")
     @GetMapping("/home/category/{category}")
     public ResponseEntity<ApiResponse<List<PolicyResponseDto>>>
     getPolicyByCategory(
@@ -147,6 +151,7 @@ public class PolicyController {
      * GET /api/post/income
      * @return 200 OK
      */
+    @Tag(name = "Policy")
     @GetMapping("/post/income")
     public ResponseEntity<ApiResponse<List<PolicyResponseDto>>>
     getPolicyByIncome(
@@ -165,6 +170,7 @@ public class PolicyController {
      * @param sort latest(최신순) | popular(인기순)
      * @return 200 OK
      */
+    @Tag(name = "Policy")
     @GetMapping("/category/{category}")
     public ResponseEntity<ApiResponse<Page<PolicyResponseDto>>>
     getCategoryPosts(

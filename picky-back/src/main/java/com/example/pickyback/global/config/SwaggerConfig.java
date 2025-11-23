@@ -74,9 +74,6 @@ public class SwaggerConfig {
 	private List<Server> servers() {
 		return List.of(
 				new Server()
-						.url("http://localhost:8080")
-						.description("로컬 개발 서버"),
-				new Server()
 						.url("http://54.180.92.121:8080")
 						.description("운영 환경 서버")
 		);
